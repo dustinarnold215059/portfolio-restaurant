@@ -84,7 +84,7 @@ const Reservations = () => {
 
       {/* Main Content */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="w-full max-w-full m-0 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Reservation Form */}
             <motion.div
@@ -387,7 +387,7 @@ const Reservations = () => {
 
       {/* Important Notes */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="w-full max-w-full m-0 px-4">
           <motion.div
             initial="hidden"
             whileInView="visible"

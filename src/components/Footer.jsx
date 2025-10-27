@@ -12,8 +12,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white w-full overflow-x-hidden">
-      <div className="max-w-full w-full mx-auto px-4 py-12">
+    <footer className="bg-gray-900 text-white w-full overflow-x-hidden m-0 p-0">
+      <div className="max-w-full w-full m-0 px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>

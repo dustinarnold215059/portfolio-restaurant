@@ -11,9 +11,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden max-w-full">
+    <div className="flex flex-col min-h-screen overflow-x-hidden max-w-full w-full m-0 p-0">
       <Header />
-      <main className="flex-grow overflow-x-hidden">
+      <main className="flex-grow overflow-x-hidden w-full max-w-full m-0 p-0">
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<Home />} />

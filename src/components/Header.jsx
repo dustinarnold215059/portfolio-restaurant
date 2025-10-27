@@ -17,8 +17,8 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50 w-full overflow-x-hidden">
-      <nav className="max-w-full w-full mx-auto px-4">
+    <header className="bg-white shadow-md sticky top-0 z-50 w-full overflow-x-hidden m-0 p-0">
+      <nav className="max-w-full w-full m-0 px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
