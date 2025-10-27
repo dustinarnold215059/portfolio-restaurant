@@ -105,7 +105,7 @@ const Reservations = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <CheckCircleIcon className="h-20 w-20 text-green-500 mx-auto mb-4" />
+                    <CheckCircleIcon className="h-20 w-20 text-green-500 mb-4" style={{ margin: '0 auto' }} />
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       Reservation Submitted!
                     </h3>
@@ -394,7 +394,7 @@ const Reservations = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
+            className="w-full"
           >
             <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6 text-center">
               Reservation Policies

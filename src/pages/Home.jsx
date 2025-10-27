@@ -206,7 +206,7 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <SparklesIcon className="h-16 w-16 mx-auto mb-4" />
+            <SparklesIcon className="h-16 w-16 mb-4" style={{ margin: '0 auto' }} />
             <h2 className="text-4xl font-bold mb-4">
               Monday Wine Night Special
             </h2>

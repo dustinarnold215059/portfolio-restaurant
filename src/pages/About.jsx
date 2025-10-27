@@ -178,7 +178,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Philosophy
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600">
               At Bella Vita, we believe that great food brings people together. Our values
               guide everything we do, from selecting ingredients to welcoming guests.
             </p>
@@ -216,7 +216,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <TrophyIcon className="h-16 w-16 text-secondary mx-auto mb-4" />
+            <TrophyIcon className="h-16 w-16 text-secondary mb-4" style={{ margin: '0 auto' }} />
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Awards & Recognition
             </h2>
