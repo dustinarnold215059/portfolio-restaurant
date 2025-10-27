@@ -69,7 +69,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden max-w-full">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center">
         <div

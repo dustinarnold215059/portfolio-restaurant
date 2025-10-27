@@ -55,7 +55,7 @@ const Reservations = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden max-w-full">
       {/* Hero Section */}
       <section className="relative h-96 flex items-center justify-center">
         <div
