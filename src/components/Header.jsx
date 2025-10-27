@@ -74,7 +74,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
+              className="md:hidden bg-white border-t border-gray-200"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
@@ -84,7 +84,7 @@ const Header = () => {
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-2 rounded-md text-base font-medium ${
                       isActive(item.href)
-                        ? 'bg-primary text-white'
+                        ? 'bg-primary text-white shadow-md'
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                   >
