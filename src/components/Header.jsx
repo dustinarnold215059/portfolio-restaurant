@@ -74,9 +74,9 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-200"
+              className="md:hidden border-t border-gray-700"
             >
-              <div className="px-4 pt-2 pb-4 space-y-1 bg-gray-50">
+              <div className="px-4 pt-3 pb-4 space-y-2 bg-black">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -85,7 +85,7 @@ const Header = () => {
                     className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
                       isActive(item.href)
                         ? 'bg-primary text-white'
-                        : 'text-gray-900 bg-white hover:bg-gray-100'
+                        : 'text-white hover:bg-gray-800'
                     }`}
                   >
                     {item.name}

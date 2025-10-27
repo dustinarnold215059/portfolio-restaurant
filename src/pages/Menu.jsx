@@ -212,11 +212,11 @@ const Menu = () => {
       </section>
 
       {/* Daily Specials Banner */}
-      <div className="bg-gradient-to-r from-primary to-secondary py-4 shadow-lg">
+      <div className="bg-amber-50 border-y-4 border-amber-600 py-4 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2 flex-wrap">
-            <SparklesIcon className="h-6 w-6 text-white flex-shrink-0" />
-            <p className="text-lg font-bold text-white text-center">
+            <SparklesIcon className="h-6 w-6 text-amber-600 flex-shrink-0" />
+            <p className="text-lg font-bold text-gray-900 text-center">
               Daily Specials: Ask your server about today's fresh catch and seasonal dishes
             </p>
           </div>
@@ -231,10 +231,10 @@ const Menu = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                className={`px-6 py-3 rounded-full font-semibold transition-all ${
                   activeCategory === category.id
-                    ? 'bg-primary text-white shadow-lg scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-red-600 text-white shadow-lg scale-105 hover:bg-red-700'
+                    : 'bg-gray-100 text-gray-900 border-2 border-gray-300 hover:bg-gray-200 hover:border-gray-400'
                 }`}
               >
                 {category.name}
