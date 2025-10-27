@@ -212,11 +212,11 @@ const Menu = () => {
       </section>
 
       {/* Daily Specials Banner */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-white py-4">
+      <div className="bg-gradient-to-r from-primary to-secondary py-4 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-2">
-            <SparklesIcon className="h-6 w-6" />
-            <p className="text-lg font-semibold">
+          <div className="flex items-center justify-center gap-2 flex-wrap">
+            <SparklesIcon className="h-6 w-6 text-white flex-shrink-0" />
+            <p className="text-lg font-bold text-white text-center">
               Daily Specials: Ask your server about today's fresh catch and seasonal dishes
             </p>
           </div>
