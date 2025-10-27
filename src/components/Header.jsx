@@ -74,18 +74,18 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t border-gray-200"
+              className="md:hidden border-t border-gray-200"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="px-4 pt-2 pb-4 space-y-1 bg-gray-50">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
                       isActive(item.href)
-                        ? 'bg-primary text-white shadow-md'
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? 'bg-primary text-white'
+                        : 'text-gray-900 bg-white hover:bg-gray-100'
                     }`}
                   >
                     {item.name}
@@ -93,7 +93,7 @@ const Header = () => {
                 ))}
                 <a
                   href="tel:3135558482"
-                  className="flex items-center justify-center space-x-2 btn-primary w-full mt-4"
+                  className="flex items-center justify-center space-x-2 btn-primary w-full mt-3"
                 >
                   <PhoneIcon className="h-5 w-5" />
                   <span>(313) 555-VITA</span>
