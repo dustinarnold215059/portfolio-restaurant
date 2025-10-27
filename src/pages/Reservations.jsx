@@ -73,10 +73,10 @@ const Reservations = () => {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center text-white px-4"
         >
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4">
             Reservations
           </h1>
-          <p className="text-xl md:text-2xl">
+          <p className="text-lg sm:text-xl md:text-2xl">
             Reserve your table for an authentic Italian experience
           </p>
         </motion.div>
@@ -335,9 +335,9 @@ const Reservations = () => {
                   </div>
                   <div className="flex items-start">
                     <EnvelopeIcon className="h-6 w-6 text-primary mt-1 mr-4 flex-shrink-0" />
-                    <div>
+                    <div className="min-w-0">
                       <p className="font-semibold text-gray-900">Email</p>
-                      <a href="mailto:reservations@bellavita.com" className="text-primary hover:underline">
+                      <a href="mailto:reservations@bellavita.com" className="text-primary hover:underline break-words text-sm sm:text-base">
                         reservations@bellavita.com
                       </a>
                     </div>
