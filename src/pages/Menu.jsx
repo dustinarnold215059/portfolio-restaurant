@@ -213,7 +213,7 @@ const Menu = () => {
 
       {/* Daily Specials Banner */}
       <div className="bg-amber-50 border-y-4 border-amber-600 py-4 shadow-lg">
-        <div className="max-w-full w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full w-full mx-auto px-4">
           <div className="flex items-center justify-center gap-2 flex-wrap">
             <SparklesIcon className="h-6 w-6 text-amber-600 flex-shrink-0" />
             <p className="text-lg font-bold text-gray-900 text-center">
@@ -225,7 +225,7 @@ const Menu = () => {
 
       {/* Category Filter */}
       <section className="py-8 bg-white shadow-md sticky top-20 z-40">
-        <div className="max-w-full w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full w-full mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
@@ -246,7 +246,7 @@ const Menu = () => {
 
       {/* Menu Items */}
       <section className="py-12">
-        <div className="max-w-full w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full w-full mx-auto px-4">
           <motion.div
             layout
             className="grid gap-6"
@@ -311,7 +311,7 @@ const Menu = () => {
 
       {/* Wine List Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-full w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full w-full mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Wine Selection
@@ -357,7 +357,7 @@ const Menu = () => {
 
       {/* Note Section */}
       <section className="py-8 bg-gray-100">
-        <div className="max-w-full w-full mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-full w-full mx-auto px-4 text-center">
           <p className="text-gray-700">
             *Prices subject to change. Please inform your server of any dietary restrictions or allergies.
           </p>
