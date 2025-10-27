@@ -7,6 +7,10 @@ import {
 } from '@heroicons/react/24/outline';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -26,22 +30,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-primary transition">
+                <Link to="/" onClick={scrollToTop} className="text-gray-300 hover:text-primary transition">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/menu" className="text-gray-300 hover:text-primary transition">
+                <Link to="/menu" onClick={scrollToTop} className="text-gray-300 hover:text-primary transition">
                   Menu
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-primary transition">
+                <Link to="/about" onClick={scrollToTop} className="text-gray-300 hover:text-primary transition">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/reservations" className="text-gray-300 hover:text-primary transition">
+                <Link to="/reservations" onClick={scrollToTop} className="text-gray-300 hover:text-primary transition">
                   Reservations
                 </Link>
               </li>
