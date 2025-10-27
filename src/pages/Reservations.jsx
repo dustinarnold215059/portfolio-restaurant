@@ -346,20 +346,20 @@ const Reservations = () => {
               </div>
 
               {/* Private Events */}
-              <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-lg shadow-xl p-8">
-                <h3 className="text-2xl font-serif font-bold mb-4">
+              <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-600 rounded-lg shadow-xl p-8">
+                <h3 className="text-2xl font-serif font-bold mb-4 text-gray-900">
                   Private Events & Catering
                 </h3>
-                <p className="text-lg mb-6">
+                <p className="text-lg mb-6 text-gray-800">
                   Planning a special event? Our private dining room can accommodate up to 40 guests,
                   perfect for birthdays, anniversaries, corporate events, and celebrations.
                 </p>
-                <p className="text-lg mb-6">
+                <p className="text-lg mb-6 text-gray-800">
                   We also offer full-service catering for events of any size at your location.
                 </p>
                 <a
                   href="mailto:reservations@bellavita.com?subject=Private Event Inquiry"
-                  className="inline-block bg-white text-primary hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition"
+                  className="inline-block bg-red-600 text-white hover:bg-red-700 font-semibold py-3 px-6 rounded-lg transition shadow-md"
                 >
                   Inquire About Private Events
                 </a>
