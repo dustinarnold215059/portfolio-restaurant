@@ -206,11 +206,11 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <SparklesIcon className="h-16 w-16 mb-4 text-white" style={{ margin: '0 auto' }} />
-            <h2 className="text-4xl font-bold mb-4 text-white">
+            <SparklesIcon className="h-16 w-16 mb-4 text-gray-900" style={{ margin: '0 auto' }} />
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">
               Monday Wine Night Special
             </h2>
-            <p className="text-xl mb-6 text-white">
+            <p className="text-xl mb-6 text-gray-800">
               50% off all bottles of Italian wine every Monday evening
             </p>
             <Link to="/reservations" className="bg-white text-primary hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition inline-block">
