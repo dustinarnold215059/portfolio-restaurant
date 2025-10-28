@@ -143,7 +143,7 @@ const Home = () => {
       </section>
 
       {/* Featured Dishes */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="max-w-full w-full m-0 px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -199,7 +199,7 @@ const Home = () => {
       </section>
 
       {/* Special Offer */}
-      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-6 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="max-w-full w-full m-0 px-4 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -221,7 +221,7 @@ const Home = () => {
       </section>
 
       {/* Hours & Location */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-full w-full m-0 px-4">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div
