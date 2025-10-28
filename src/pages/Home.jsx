@@ -199,18 +199,18 @@ const Home = () => {
       </section>
 
       {/* Special Offer */}
-      <section className="py-4 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-4 bg-gradient-to-r from-primary to-secondary">
         <div className="max-w-full w-full m-0 px-4 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <SparklesIcon className="h-16 w-16 mb-4" style={{ margin: '0 auto' }} />
-            <h2 className="text-4xl font-bold mb-4">
+            <SparklesIcon className="h-16 w-16 mb-4 text-yellow-300" style={{ margin: '0 auto' }} />
+            <h2 className="text-4xl font-bold mb-4 text-yellow-300">
               Monday Wine Night Special
             </h2>
-            <p className="text-xl mb-6">
+            <p className="text-xl mb-6 text-yellow-100">
               50% off all bottles of Italian wine every Monday evening
             </p>
             <Link to="/reservations" className="bg-white text-primary hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition inline-block">
