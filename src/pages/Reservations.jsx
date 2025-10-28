@@ -20,33 +20,93 @@ const Reservations = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^[\d\s\-().+]{10,}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!validatePhone(formData.phone)) {
+      newErrors.phone = 'Please enter a valid phone number';
+    }
+
+    if (!formData.date) {
+      newErrors.date = 'Date is required';
+    }
+
+    if (!formData.time) {
+      newErrors.time = 'Time is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: '',
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log('Reservation submitted:', formData);
-    setIsSubmitted(true);
 
-    // Reset form after 3 seconds
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Simulate API call
     setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        date: '',
-        time: '',
-        partySize: '2',
-        specialRequests: '',
-      });
-    }, 3000);
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+          partySize: '2',
+          specialRequests: '',
+        });
+      }, 5000);
+    }, 1000);
   };
 
   const fadeInUp = {
@@ -127,9 +187,14 @@ const Reservations = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                          errors.name ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="John Doe"
                       />
+                      {errors.name && (
+                        <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                      )}
                     </div>
 
                     {/* Email */}
@@ -144,9 +209,14 @@ const Reservations = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                          errors.email ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="john@example.com"
                       />
+                      {errors.email && (
+                        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                      )}
                     </div>
 
                     {/* Phone */}
@@ -161,9 +231,14 @@ const Reservations = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                          errors.phone ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="(313) 555-1234"
                       />
+                      {errors.phone && (
+                        <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                      )}
                     </div>
 
                     {/* Date and Time */}
@@ -179,8 +254,14 @@ const Reservations = () => {
                           value={formData.date}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                          min={new Date().toISOString().split('T')[0]}
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                            errors.date ? 'border-red-500' : 'border-gray-300'
+                          }`}
                         />
+                        {errors.date && (
+                          <p className="text-red-500 text-sm mt-1">{errors.date}</p>
+                        )}
                       </div>
                       <div>
                         <label htmlFor="time" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -192,7 +273,9 @@ const Reservations = () => {
                           value={formData.time}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                            errors.time ? 'border-red-500' : 'border-gray-300'
+                          }`}
                         >
                           <option value="">Select Time</option>
                           <option value="11:00">11:00 AM</option>
@@ -212,6 +295,9 @@ const Reservations = () => {
                           <option value="20:30">8:30 PM</option>
                           <option value="21:00">9:00 PM</option>
                         </select>
+                        {errors.time && (
+                          <p className="text-red-500 text-sm mt-1">{errors.time}</p>
+                        )}
                       </div>
                     </div>
 
@@ -259,9 +345,21 @@ const Reservations = () => {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full btn-primary text-lg"
+                      disabled={isSubmitting}
+                      className={`w-full text-lg transition-all duration-300 ${
+                        isSubmitting
+                          ? 'bg-gray-400 cursor-not-allowed py-3 px-6 rounded-lg text-white'
+                          : 'btn-primary'
+                      }`}
                     >
-                      Reserve Table
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center">
+                          <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-3"></div>
+                          Reserving...
+                        </div>
+                      ) : (
+                        'Reserve Table'
+                      )}
                     </button>
 
                     <p className="text-sm text-gray-600 text-center">
